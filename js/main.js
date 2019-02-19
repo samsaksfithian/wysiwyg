@@ -2,11 +2,16 @@
 //=============================================================
 // Main JS code to run the WYSIWYG page
 
-// Imports
+// Imports and Custom Definitions
 import { toggleActiveButtonClick } from "./toggleActive.js";
 import handleEditorInput from "./handleEditorInput.js";
 import addParagraph from "./addParagraph.js";
 import { paragraphTextTemplate, titleTextTemplate } from "./htmlSectionTemplates.js";
+import Editor from "./components/Editor.js";
+
+//=============================================================
+
+customElements.define('wysiwyg-editor', Editor);
 
 //=============================================================
 //=============================================================
@@ -20,7 +25,7 @@ const editAndSaveButtons = document.querySelectorAll('.edit-button, .save-button
 editAndSaveButtons.forEach(button => button.addEventListener('click', toggleActiveButtonClick));
 
 // listen for 'input' events from editor and when fired, update text or style of sibling '.text-element'
-const editors = document.querySelectorAll('.editor');
+const editors = document.querySelectorAll('wysiwyg-editor');
 editors.forEach(editor => editor.addEventListener('input', handleEditorInput));
 
 // get the add paragraph button and adds a click listener
