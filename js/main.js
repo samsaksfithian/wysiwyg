@@ -4,6 +4,7 @@
 
 // Imports
 import { toggleActiveButtonClick } from "./toggleActive.js";
+import handleEditorInput from "./handleEditorInput.js";
 
 //=============================================================
 //=============================================================
@@ -13,6 +14,12 @@ import { toggleActiveButtonClick } from "./toggleActive.js";
 const editAndSaveButtons = document.querySelectorAll('.edit-button, .save-button');
 editAndSaveButtons.forEach(button => button.addEventListener('click', toggleActiveButtonClick));
 
+// listen for 'input' events from editor and when fired, update text or style of sibling '.text-element'
+const editors = document.querySelectorAll('.editor');
+editors.forEach(editor => editor.addEventListener('input', handleEditorInput));
+
 //=============================================================
 //=============================================================
+
+
 
