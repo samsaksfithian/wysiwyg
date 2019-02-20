@@ -11,6 +11,32 @@ export default class EditableText extends HTMLElement {
 
 	//=============================================================
 
+	/**
+	 * Gets whether this element has the active attribute
+	 * @returns {boolean} True if active, false if not
+	 */
+	get active(){
+		return this.hasAttribute('active');
+	}
+
+	//=============================================================
+
+	/**
+	 * Sets whether this element has the active attribute or not
+	 * @param {boolean} isActive Whether the element is currently active
+	 */
+	set active(setActive){
+		if (setActive) {
+			// active is a boolean attribute, which counts as true when it's just on the element
+			this.setAttribute('active', ''); // turn it on
+		} else{
+			// since it's a boolean attribute, turn it off by just removing it
+			this.removeAttribute('active'); // turn it off
+		}
+	}
+
+	//=============================================================
+
 	// this is called when the HTML element is placed on the page
 	connectedCallback(){
 		this.render();
@@ -36,7 +62,7 @@ export default class EditableText extends HTMLElement {
 	 * Takes a click event on a button in this editor and toggles if this editor is active/visible
 	 */
 	toggleActive() {
-		this.classList.toggle('active');
+		this.active = !this.active;
 	}
 
 	//=============================================================
