@@ -19,15 +19,6 @@ customElements.define('wysiwyg-editable-heading', EditableHeading);
 //=============================================================
 // General on-start code
 
-// TODO: DELETE
-// get all edit buttons, then add click event listener to each
-// const editAndSaveButtons = document.querySelectorAll('.edit-button, .save-button');
-// editAndSaveButtons.forEach(button => button.addEventListener('click', toggleActiveButtonClick));
-
-// listen for 'input' events from editor and when fired, update text or style of sibling '.text-element'
-// const editors = document.querySelectorAll('.editor');
-// editors.forEach(editor => editor.addEventListener('input', handleEditorInput));
-
 // get the add paragraph button and adds a click listener
 const addParagraphButton = document.getElementById('add-button');
 addParagraphButton.addEventListener('click', addParagraph);

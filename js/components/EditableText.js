@@ -23,7 +23,7 @@ export default class EditableText extends HTMLElement {
 
 	/**
 	 * Sets whether this element has the active attribute or not
-	 * @param {boolean} isActive Whether the element is currently active
+	 * @param {boolean} setActive what the active attribute should be set to
 	 */
 	set active(setActive){
 		if (setActive) {
