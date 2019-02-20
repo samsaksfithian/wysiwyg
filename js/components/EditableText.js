@@ -6,6 +6,7 @@ export default class EditableText extends HTMLElement {
 	constructor() {
 		super();
 		this.toggleActive = this.toggleActive.bind(this);
+		this.handleInput = this.handleInput.bind(this);
 	}
 
 	//=============================================================
@@ -47,9 +48,8 @@ export default class EditableText extends HTMLElement {
 	handleInput(event) {
 		// event.target => the thing that fires the event
 		// event.currentTarget => the thing that captures the event
-		const editorBlock = event.currentTarget;
 		const input = event.target;
-		const textElement = editorBlock.parentElement.querySelector('.text-element');
+		const textElement = this.querySelector('.text-element');
 		if(event.target.type === 'text' || event.target.tagName === 'TEXTAREA'){
 			// handle text change
 			const text = input.value;
