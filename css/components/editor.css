@@ -7,7 +7,7 @@ wysiwyg-editor {
 	display: block;
  }
  
- .editable-text.active wysiwyg-editor {
+ wysiwyg-editable-text.active wysiwyg-editor {
 	max-height: 10rem;
 	padding-top: 1rem;
  }

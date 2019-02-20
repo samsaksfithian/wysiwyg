@@ -3,13 +3,12 @@
 // Class file for the Editor Web Component
 
 export default class Editor extends HTMLElement {
-	// constructor() {
-	// 	this.addEventListener('input', handleEditorInput);
-	// }
-
+	// this is called when the HTML element is placed on the page
 	connectedCallback(){
 		this.render();
 	}
+
+	//=============================================================
 
 	render(){
 		this.innerHTML = `
@@ -25,7 +24,7 @@ export default class Editor extends HTMLElement {
 			<div class="form-group">
 				<label>
 					Font size:
-					<input type="number" name="font-size" data-unit="px" value="32"/>
+					<input type="number" name="font-size" data-unit="px" value="16"/>
 					px
 				</label>
 			</div>
@@ -39,23 +38,12 @@ export default class Editor extends HTMLElement {
 					</select>
 				</label>
 			</div>
-			</section>`
-
-		// this.addEventListener('input', handleEditorInput);
+			</section>`;
 	}
 
+	//=============================================================
 
 }
-
-
-
-
-
-
-
-
-
-
 
 //=============================================================
 //=============================================================
