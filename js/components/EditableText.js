@@ -76,7 +76,7 @@ export default class EditableText extends HTMLElement {
 		// event.currentTarget => the thing that captures the event
 		const input = event.target;
 		const textElement = this.querySelector('.text-element');
-		if(event.target.type === 'text' || event.target.tagName === 'TEXTAREA'){
+		if(input.type === 'text' || input.tagName === 'TEXTAREA'){
 			// handle text change
 			const text = input.value;
 			textElement.innerText = text;

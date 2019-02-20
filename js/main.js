@@ -4,6 +4,7 @@
 
 // Imports
 import addParagraph from "./addParagraph.js";
+import addTitle from "./addTitle.js";
 import Editor from "./components/Editor.js";
 import EditableText from "./components/EditableText.js";
 import EditableHeading from './components/EditableHeading.js';
@@ -19,9 +20,9 @@ customElements.define('wysiwyg-editable-heading', EditableHeading);
 //=============================================================
 // General on-start code
 
-// get the add paragraph button and adds a click listener
-const addParagraphButton = document.getElementById('add-button');
-addParagraphButton.addEventListener('click', addParagraph);
+// get the add paragraph button and add a click listener
+document.getElementById('add-button-p').addEventListener('click', addParagraph);
+document.getElementById('add-button-t').addEventListener('click', addTitle);
 
 
 //=============================================================

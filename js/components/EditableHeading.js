@@ -42,12 +42,26 @@ export default class EditableHeader extends EditableText {
 		this.innerHTML = `
 			<button type="button" class="edit-button">Edit</button>
 			<button type="button" class="save-button">Save</button>		  
-			<${this.heading} class="text-element">Title here</${this.heading}>
-			<wysiwyg-editor></wysiwyg-editor>`;
+			<${this.heading} class="text-element">Your title</${this.heading}>
+			<wysiwyg-editor type="title"></wysiwyg-editor>`;
 		
 		this.querySelector('.edit-button').addEventListener('click', this.toggleActive);
 		this.querySelector('.save-button').addEventListener('click', this.toggleActive);
 		this.querySelector('wysiwyg-editor').addEventListener('input', this.handleInput);
+	}
+
+	//=============================================================
+
+	/**
+	 * Update text (or style) of contained element
+	 * @param {Event} event The triggering event
+	 */
+	handleInput(event) {
+		if(event.target.name === 'heading-type'){
+			this.heading = event.target.value;
+		} else{
+			super.handleInput(event);
+		}
 	}
 
 	//=============================================================
