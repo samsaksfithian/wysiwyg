@@ -57,6 +57,7 @@ export default class EditableHeader extends EditableText {
 	 * @param {Event} event The triggering event
 	 */
 	handleInput(event) {
+		// this still doesn't really work, because it re-renders and resets the style values in the editor
 		if(event.target.name === 'heading-type'){
 			this.heading = event.target.value;
 		} else{
